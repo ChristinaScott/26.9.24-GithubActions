@@ -34,6 +34,7 @@ jobs:
             git commit -m "Update the log.txt"
           else
             echo "log.txt is not available"
+          fi
 
       - name: Push changes
         run: |
