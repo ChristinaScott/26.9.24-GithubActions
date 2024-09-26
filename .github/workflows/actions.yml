@@ -26,14 +26,14 @@ jobs:
         run: python main.py
 
       - name: Commit changes
-        run: | 
-          git config --local user.email "actions@github.com"
+        run: |
+          git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           if [ -f log.txt ]; then
             git add log.txt
-            git commit -m "Update the log.txt"
+            git commit -m "Update log.txt" || echo "No changes to commit"
           else
-            echo "log.txt is not available"
+            echo "log.txt not found"
           fi
 
       - name: Push changes
